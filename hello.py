@@ -1,4 +1,2 @@
-msg = "Hello World"
-print(msg)
-
-# I farted
+name = input("Tell me your name: ")
+print(name)
