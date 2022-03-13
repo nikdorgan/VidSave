@@ -2,6 +2,7 @@ from tkinter import filedialog
 from pytube import YouTube
 import tkinter as tk
 import os
+import sys
 
 window = tk.Tk()
 window.title("VidSave")
@@ -29,6 +30,7 @@ def vidDownload():
     base, ext = os.path.splitext(out_file)
     new_file = base + '.mp3'
     os.rename(out_file, new_file)
+    sys.exit()
 
 
 def openWinDiag():
