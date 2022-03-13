@@ -21,19 +21,19 @@ destination = "."
 
 def vidDownload():
     vid = vidEntry.get()
-    yt = YouTube(str(vid))
-
-    video = yt.streams.filter(only_audio=True).first()
-
     global destination
 
+    yt = YouTube(str(vid))
+    video = yt.streams.filter(only_audio=True).first()
     out_file = video.download(output_path=destination)
-
     base, ext = os.path.splitext(out_file)
     new_file = base + '.mp3'
     os.rename(out_file, new_file)
 
-    print(yt.title + " has been successfully downloaded.")
+
+def openWinDiag():
+    global destination
+    destination = filedialog.askdirectory()
 
 
 songLabel = tk.Label(text="Enter YouTube URL", font=('Helvetica', 18, 'bold'))
@@ -50,11 +50,6 @@ downButton = tk.Button(
 )
 
 downButton.grid(row=2, column=0, columnspan=2, pady=10)
-
-
-def openWinDiag():
-    global destination
-    destination = filedialog.askdirectory()
 
 
 fileButton = tk.Button(
