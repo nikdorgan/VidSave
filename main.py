@@ -2,7 +2,7 @@ from tkinter import filedialog
 import tkinter as tk
 from pytube import YouTube
 import os
-import sys 
+import sys
 
 # This block uses tkinter to make a really simple GUI
 window = tk.Tk()
