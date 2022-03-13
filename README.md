@@ -1,6 +1,6 @@
 # VidSave
 
-A Lightweight YouTube-to-MP3 Script
+A YouTube-to-MP3 Script
 
 BACKGROUND
 
