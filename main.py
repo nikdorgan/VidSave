@@ -1,10 +1,10 @@
 from tkinter import filedialog
-from pytube import YouTube
 import tkinter as tk
+from pytube import YouTube
 import os
 import sys 
 
-# This code block uses tkinter to make a really basic GUI
+# This block uses tkinter to make a really simple GUI
 window = tk.Tk()
 window.title("VidSave")
 screenWidth = window.winfo_screenwidth()
@@ -31,8 +31,8 @@ def videoDownload():
     video = YouTube(str(videoURL))
     audio = video.streams.filter(only_audio=True).first()
     outFile = audio.download(output_path=videoDestination)
-    base, ext = os.path.splitext(outFile)
-    newFile = base + '.mp3'
+    fileName, ext = os.path.splitext(outFile)
+    newFile = fileName + '.mp3'
     os.rename(outFile, newFile)
     sys.exit()
 
