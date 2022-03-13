@@ -6,7 +6,7 @@ import os
 window = tk.Tk()
 window.title("VidSave")
 windowWidth = 500
-windowHeight = 300
+windowHeight = 250
 screenWidth = window.winfo_screenwidth()
 screenHeight = window.winfo_screenheight()
 centerX = int(screenWidth/2 - windowWidth / 2)
@@ -36,18 +36,16 @@ def vidDownload():
     print(yt.title + " has been successfully downloaded.")
 
 
-songLabel = tk.Label(text="Enter YouTube URL")
+songLabel = tk.Label(text="Enter YouTube URL", font=('Helvetica', 18, 'bold'))
 songLabel.grid(row=0, column=0, columnspan=2, pady=10)
 
-songEntry = tk.Entry(window, textvariable=vidEntry)
+songEntry = tk.Entry(textvariable=vidEntry)
 songEntry.grid(row=1, column=0, padx=5, pady=10, sticky='e')
 
 downButton = tk.Button(
     text="Download",
     width=25,
     height=5,
-    bg="white",
-    fg="black",
     command=vidDownload
 )
 
@@ -59,7 +57,11 @@ def openWinDiag():
     destination = filedialog.askdirectory()
 
 
-fileButton = tk.Button(window, text="Folder", command=openWinDiag)
+fileButton = tk.Button(
+    text="Destination",
+    command=openWinDiag
+)
+
 fileButton.grid(row=1, column=1, padx=5, sticky='w')
 
 window.mainloop()
