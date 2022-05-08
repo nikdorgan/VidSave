@@ -4,7 +4,7 @@ Usage (Mac OS X): python setup.py py2app
 Usage (Windows): python setup.py py2exe
 """
 
-import sys 
+import sys
 from setuptools import setup
 
 mainscript = 'VidSave.py'
