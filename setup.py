@@ -7,7 +7,7 @@ Usage (Windows): python setup.py py2exe
 import sys 
 from setuptools import setup
 
-mainscript = 'MyApplication.py'
+mainscript = 'VidSave.py'
 
 if sys.platform == 'darwin':
     extra_options = dict(
