@@ -13,8 +13,8 @@ if sys.platform == 'darwin':
     extra_options = dict(
         setup_requires=['py2app'],
         app=APP,
-    ) 
-    
+    )
+
 elif sys.platform == 'win32':
     extra_options = dict(
         setup_requires=['py2exe'],
@@ -23,15 +23,13 @@ elif sys.platform == 'win32':
 
 else:
     extra_options = dict(
-        # Normally unix-like platforms will use "setup.py install"
-        # and install the main script as such
         scripts=APP,
     )
 
 setup(
     name="VidSave",
     **extra_options,
-    options = {
-        # 'iconfile':'icon.icns',
+    options={
+        'iconfile': 'icon.icns',
     }
 )
